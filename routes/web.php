@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('category',CategoryController::class);
     Route::resource('annonce', AnnonceController::class);
-    Route::get('/home', [HomeController::class, 'index'])->name('home.show');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');;
     Route::post('/annonces/{annonce}/comment', [CommentController::class, 'store'])->name('comments.store');
     Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 

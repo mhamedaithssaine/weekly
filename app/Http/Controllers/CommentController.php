@@ -9,10 +9,13 @@ use App\Models\Annonce;
 
 class CommentController extends Controller
 {
+
+   
     public function store(Request $request, $annonceId)
     {
         $request->validate([
             'contenu' => 'required|string|max:500',
+
         ]);
      
         Comment::create([
