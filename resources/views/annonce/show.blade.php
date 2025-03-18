@@ -32,12 +32,18 @@
 
                 <div class="card-footer bg-light text-center">
                     <a href="{{ route('annonce.index') }}" class="btn btn-outline-secondary btn-sm">Back</a>
+                    @can('edit',$annonce)
                     <a href="{{ route('annonce.edit', $annonce->id) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                    @endcan
+                    @can('update',$annonce)
                     <form action="{{ route('annonce.destroy', $annonce->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(' Prét de Supprimer cette annonce ?')" >Delete</button>
                     </form>
+                    @endcan
+                  
                 </div>
             </div>
         </div>

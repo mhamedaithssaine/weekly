@@ -58,6 +58,15 @@
                             </select>
                             @error('status') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="status">Statut</label>
+                            <select name="status" class="form-control">
+                                <option value="author">author</option>
+                                <option value="admin">admin</option>
+                                <option value="user">user</option>
+                            </select>
+                            @error('status') <span class="text-danger">{{ $message }}</span> @enderror
+                        </div>
 
                         <div class="mb-3">
                             <button class="btn btn-primary">Save</button>

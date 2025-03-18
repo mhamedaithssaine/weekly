@@ -23,6 +23,7 @@ class Annonce extends Model
         'status',
         'user_id',
         'category_id',
+        'role',
 
     ];
 

@@ -20,6 +20,7 @@
                                 <th>Description</th>
                                 <th>Image</th>
                                 <th>Prix</th>
+                                <th>role</th>
                                 <th>Statut</th>
                                 <th>Actions</th>
                             </tr>
@@ -32,9 +33,13 @@
                                     <td>{{ Str::limit($annonce->description, 50) }}</td>
                                     <td><img class="w-12 h-12 object-cover rounded" src="{{ asset('storage/'.$annonce->image) }}" alt="image"></td>
                                     <td>{{ $annonce->prix ?? 'Gratuit' }} DH</td>
+                                    <td>{{ $annonce->role }}</td>
                                     <td>{{ ucfirst($annonce->status) }}</td>
                                     <td>
+                                      
                                         <a href="{{ route('annonce.show', $annonce->id) }}" class="btn btn-info btn-sm">Show</a>
+
+                                      
                                       
                                     </td>
                                 </tr>
